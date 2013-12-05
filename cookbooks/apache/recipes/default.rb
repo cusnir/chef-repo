@@ -7,20 +7,15 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#install apache
-package "apache2" do
+package node["package_name"] do
 	action :install
 end
 
-#start apache service
-#make sure service starts on reboot
-service "apache2" do
+service node["service_name"] do
 	action [:start, :enable]
 end
 
-
-#write home page
-cookbook_file "/var/www/index.html" do
-	source "index.html"
+template "#{node["document_root"]}/index.html" do
+	source "index.html.erb"
 	mode "0644"
 end
