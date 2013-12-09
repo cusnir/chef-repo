@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+  ServerName localhost2
+
+  ServerAdmin webmaster@localhost
+
+  CacheEnable disk /
+
+  ProxyPass / http://127.0.0.1:80
+  ProxyPassReverse / http://127.0.0.1:80
+
+  LogLevel warn
+  ErrorLog /var/log/apache2/proxy_errors.log
+  CustomLog /var/log/apache2/proxy_access.log combined
+
+</VirtualHost>

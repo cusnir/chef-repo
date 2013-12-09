@@ -2,7 +2,7 @@
 # Cookbook Name:: apache
 # Recipe:: default
 #
-# Copyright 2013, YOUR_COMPANY_NAME
+# Copyright 2013, Andrei Cusnir
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -19,3 +19,4 @@ template "#{node["document_root"]}/index.html" do
 	source "index.html.erb"
 	mode "0644"
 end
+
